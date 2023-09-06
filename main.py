@@ -63,8 +63,7 @@ class ModelSavingCallback(TrainingCallback):
             self.c = 0
         if epoch % self.step == 0 and epoch > self.num_epochs_passed:
             self.c = 0
-            torch.save(self.model, f'''./models/trained_model_{self.dataset_name}_
-            {self.model_name}_{self.method}_{epoch}.pkl''')
+            torch.save(self.model, f'./models/trained_model_{self.dataset_name}_{self.model_name}_{self.method}_{epoch}.pkl')
 
 
 class NoModelSavingCallback(TrainingCallback):
